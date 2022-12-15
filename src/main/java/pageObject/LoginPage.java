@@ -13,6 +13,7 @@ public class LoginPage extends Testbase{
 	By password=By.xpath("//input[@id='current-password']");
     By loginbutton=By.xpath("(//*[text()='Log in'])[2]");
     By incorrectmessage=By.xpath("//*[@class='EmailInput_email_error__IJxXf']");
+    
     public LoginPage(WebDriver driver) {
     	this.driver=driver;
     	
@@ -36,6 +37,14 @@ public class LoginPage extends Testbase{
     public String incorrectcredmessage() {
     	String message =driver.findElement(incorrectmessage).getText();
     	return message;
+    }
+    
+    public void  ApplicationLogin() {
+    	
+    	setemail("rtoor204@gmail.com");
+    	setPassword("Abcde@12345");
+    	loginButton();
+    	
     }
     
 }

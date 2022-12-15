@@ -32,6 +32,7 @@ public class Testbase {
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10));
+		//driver.get("https://profile.w3schools.com/log-in");
 		
 		
 	}
