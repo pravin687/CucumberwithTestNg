@@ -13,15 +13,16 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Testbase {
-	public static WebDriver driver;
+	public WebDriver driver;
 	public static Properties prop;
-	public static  void launchDriver() throws IOException {
+	public WebDriver launchDriver() throws IOException {
+		
 		File f=new File(System.getProperty("user.dir")+"//src//test//resources//Config.properties");
 		FileInputStream fs= new FileInputStream(f);
 		prop=new Properties();
 		prop.load(fs);
 		String browsername=(String) prop.get("browser");
-		
+		if(driver==null) {
 		if(browsername.equalsIgnoreCase("chrome")) {
 			driver= new ChromeDriver();
 		}else if(browsername.equalsIgnoreCase("Firefox")) {
@@ -35,6 +36,8 @@ public class Testbase {
 		//driver.get("https://profile.w3schools.com/log-in");
 		
 		
+		}
+		return driver;
 	}
 
 }

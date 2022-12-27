@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import base.Testbase;
 
-public class LoginPage extends Testbase{
+public class LoginPage{
 	private WebDriver driver;
 	
 	
@@ -19,6 +19,9 @@ public class LoginPage extends Testbase{
     	
     }
     
+    public void loginToUrl() {
+    	driver.get("https://profile.w3schools.com/log-in");
+    }
     public void setemail(String emailid) {
     	
     	driver.findElement(email).sendKeys(emailid);
@@ -47,4 +50,8 @@ public class LoginPage extends Testbase{
     	
     }
     
+    public String getTitle() {
+    return	driver.getTitle();
+    	
+    }
 }
